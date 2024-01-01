@@ -1,5 +1,6 @@
 // dependencies
-require("dotenv").config()
+require("dotenv").config() // so we can use the .env info
+require("./config/db.js") // connect server to mongo
 
 const express = require("express")
 const morgan = require("morgan")
