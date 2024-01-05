@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+<body>
+    <main>
+        <div>
+            
+            <h2><%=indyAnimal.species%> - <%=indyAnimal.extinct ? "Still Living" : "No Longer Alive" %></h2>
+            <h3><%= indyAnimal.location %></h3>
+            <a href="/animals/<%= indyAnimal._id %>/edit"><button>Edit</button></a>
+            <form action="/animals/<%= indyAnimal._id %>?_method=DELETE" method="POST">
+                <button>Delete</button>
+            </form>
+            <a href="/animals"><button>Back to Main</button></a>
+        </div>
+    </main>
+</body>
+</html>

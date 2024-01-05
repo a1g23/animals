@@ -64,9 +64,42 @@ router.get("/seed", async (req, res) => {
 
 })
 
+// index route (get -> / to database of animals)
+
+router.get("/", async (req, res) => {
+    // find the animals in the db
+    const animals = await Animal.find({})
+    // render the index.ejs page with the animals attached
+    res.render("./index.ejs", {animals})
+
+})
 
 
 
+
+
+
+
+
+
+
+// show route (get -> /:id)
+
+router.get("/:id", async (req, res) => {
+    try {
+    // get the ID
+    const id = req.params.id
+
+    // get the animal with that id
+    const indyAnimal = await Animal.findById(id)
+
+    // render show.ejs and send the indy animal
+    res.render("./show.ejs", {indyAnimal})
+
+    } catch(error) {
+        console.log(error.message)
+    }
+})
 
 
 module.exports = router
