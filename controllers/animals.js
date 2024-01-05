@@ -67,14 +67,48 @@ router.get("/seed", async (req, res) => {
 // index route (get -> / to database of animals)
 
 router.get("/", async (req, res) => {
+    try {
     // find the animals in the db
     const animals = await Animal.find({})
     // render the index.ejs page with the animals attached
     res.render("./index.ejs", {animals})
+    } catch(error) {
+    console.log(error.message)
+    }
+})
+
+// new route (get -> /new to a form)
+
+router.get("/new", (req, res) => {
+    //pretty simply just need to rend the new.ejs
+    res.render("new.ejs")
 
 })
 
+// create route (post -> / and update boolean)
 
+router.post("/", async (req, res) => {
+    try {
+        // correct the boolean
+        if (req.body.extinct === "on") {
+            req.body.extinct = false
+        } else {
+            req.body.extinct = true
+        }
+        
+        // grab the body
+        const newAnimal = req.body
+
+        // add it to the db
+        await Animal.create(newAnimal)
+
+        // redirect to animals
+        res.redirect("/animals")
+
+    } catch(error) {
+    console.log(error.message)
+    }
+})
 
 
 

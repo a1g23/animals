@@ -3,11 +3,15 @@
 <%- include("./partials/head.ejs") %>
 <body>
     <main>
+        <nav>
+            <a href="/animals/new">New Species</a>
+            <a href="/animals">Home</a>
+        </nav>
         <div>
             <% for(let el of animals) { %>
                 <article>
                     <a href="/animals/<%=el._id%>">
-                        <h2><%= el.species %> - <%= el.extinct ? "Still Living" : "No Longer Alive" %></h2>
+                        <h2><%= el.species %> - <%= el.extinct ? "No Longer Alive" : "Still Living" %></h2>
                     </a>
                 </article>
             <% } %>
