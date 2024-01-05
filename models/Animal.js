@@ -1,6 +1,5 @@
 // dependencies
-const { timeStamp } = require("console")
-const mongoose = require("../config/db.js") // we need the connection to the database
+const mongoose = require("./db.js") // we need the connection to the database
 
 // creating the model/schema of the data
 
@@ -9,7 +8,7 @@ const animalSchema = new mongoose.Schema({
     extinct: Boolean,
     location: String,
     lifeExpectancy: Number,
-}, {timeStamp: true})
+})
 
 // create the model with the Schema
 
