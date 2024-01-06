@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("./partials/head.ejs") %>
+</head>
+<body>
+    <main>
+        <a href="/animals/<%=indyAnimal._id%>">Home</a>
+        <div>
+            <form action="/animals/<%=indyAnimal._id%>/?_method=PUT" method="POST">
+                <fieldset>
+                    <legend>Edit an Animal</legend>
+                    <label>
+                        Species: <input type="text" name="species" placeholder="<%=indyAnimal.species%>">
+                    </label>
+                    <label>
+                        Location: <input type="text" name="location" placeholder="<%=indyAnimal.location%>">
+                    </label>
+                    <label>
+                        Is it Extinct?: <input type="checkbox" name="extinct" <%= indyAnimal.extinct ? "checked" : "" %>>
+                    </label>
+                    <label>
+                        Average Lifespan?: <input type="number" name="lifeExpectancy" placeholder="<%=indyAnimal.lifeExpectancy%>">
+                    </label>
+                </fieldset>
+                <button>Edit the Animal</button>
+                
+            </form>
+            
+        </div>
+    </main>
+</body>
+</html>
