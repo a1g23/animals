@@ -4,14 +4,15 @@
 <body>
     <main>
         <nav>
+            <a href="/animals">Home</a><br>
             <a href="/animals/new">New Species</a>
-            <a href="/animals">Home</a>
+            
         </nav>
         <div>
             <% for(let el of animals) { %>
                 <article>
                     <a href="/animals/<%=el._id%>">
-                        <h2><%= el.species %> - <%= el.extinct ? "No Longer Alive" : "Still Living" %></h2>
+                        <h2><%= el.species %></h2>
                     </a>
                 </article>
             <% } %>
