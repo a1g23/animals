@@ -134,7 +134,7 @@ router.get("/:id/edit", async (req, res) => {
 router.put("/:id", async (req, res) => {
     try {
         // handle the booelean
-        req.body.extinct = req.body.extinct === "on" ? false : true
+        req.body.extinct = req.body.extinct === "on" ? true : false
 
         // find the id
         const id = req.params.id

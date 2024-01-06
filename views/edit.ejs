@@ -11,16 +11,16 @@
                 <fieldset>
                     <legend>Edit an Animal</legend>
                     <label>
-                        Species: <input type="text" name="species" placeholder="<%=indyAnimal.species%>">
+                        Species: <input type="text" name="species" value="<%=indyAnimal.species%>">
                     </label>
                     <label>
-                        Location: <input type="text" name="location" placeholder="<%=indyAnimal.location%>">
+                        Location: <input type="text" name="location" value="<%=indyAnimal.location%>">
                     </label>
                     <label>
                         Is it Extinct?: <input type="checkbox" name="extinct" <%= indyAnimal.extinct ? "checked" : "" %>>
                     </label>
                     <label>
-                        Average Lifespan?: <input type="number" name="lifeExpectancy" placeholder="<%=indyAnimal.lifeExpectancy%>">
+                        Average Lifespan?: <input type="number" name="lifeExpectancy" value="<%=indyAnimal.lifeExpectancy%>">
                     </label>
                 </fieldset>
                 <button>Edit the Animal</button>

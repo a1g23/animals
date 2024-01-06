@@ -5,8 +5,11 @@
     <main>
         <div>
             
-            <h2><%=indyAnimal.species%> - <%=indyAnimal.extinct ? "No Longer Alive" : "Still Living" %></h2>
-            <h3><%= indyAnimal.location %></h3>
+            <h3>Species: <%= indyAnimal.species%></h3>
+            
+            <h3>Location: <%= indyAnimal.location %></h3>
+            <h4>Life Expectancy: <%= indyAnimal.lifeExpectancy %></h4>
+            <h4><%=indyAnimal.extinct ? "No Longer Alive" : "Still Living" %></h4>
             <a href="/animals/<%= indyAnimal._id %>/edit"><button>Edit</button></a>
             <form action="/animals/<%= indyAnimal._id %>?_method=DELETE" method="POST">
                 <button>Delete</button>
