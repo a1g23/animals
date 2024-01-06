@@ -16,7 +16,7 @@ const app = express()
 app.use(morgan("dev")) // to help with errors
 app.use(methodOverride("_method")) // for the delete and puts
 app.use(express.urlencoded({extended: true})) // for body parsing
-
+app.use("/public", express.static("public"))
 
 //Routes
 
